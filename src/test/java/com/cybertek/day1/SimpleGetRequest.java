@@ -13,9 +13,13 @@ public class SimpleGetRequest {
 
         Response response = RestAssured.get(url);
 
+        //print status
         System.out.println(response.statusCode());
 
+        //print response body
         response.prettyPrint();
 
     }
+
+
 }
