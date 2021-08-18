@@ -6,8 +6,8 @@ import io.restassured.response.Response;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 
-import static io.restassured.RestAssured.*;
-import static org.junit.jupiter.api.Assertions.*;
+import static io.restassured.RestAssured.given;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class SpartanNegativeGetTest {
     @BeforeAll
@@ -22,6 +22,8 @@ public class SpartanNegativeGetTest {
       Then status code must be 406
       And response Content Type must be application/xml;charset=UTF-8
       */
+
+
     @Test
     public void test1() {
 

@@ -1,20 +1,15 @@
 package com.cybertek.day2;
 
-import com.sun.org.apache.xpath.internal.operations.And;
-import io.restassured.RestAssured;
 import io.restassured.http.ContentType;
 import io.restassured.response.Response;
-import javafx.beans.binding.When;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
-import sun.net.www.content.text.plain;
-import sun.security.util.Length;
 
-import java.sql.SQLOutput;
-
-import static io.restassured.RestAssured.*;
-import static org.junit.jupiter.api.Assertions.*;
+import static io.restassured.RestAssured.given;
+import static io.restassured.RestAssured.when;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 public class SpartanGetRequest {
 
