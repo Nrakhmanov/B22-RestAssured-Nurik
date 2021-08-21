@@ -8,6 +8,6 @@ public abstract class HRTestBase {
 
     @BeforeAll
     public static void init() {
-        baseURI = "http://3.92.136.109:1000/ords/hr";
+        baseURI = "http://52.91.229.67:1000/ords/hr";
     }
 }
