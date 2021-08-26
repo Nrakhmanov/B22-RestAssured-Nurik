@@ -3,6 +3,7 @@ package com.cybertek.day6;
 import com.cybertek.pojo.Employee;
 import com.cybertek.pojo.Region;
 import com.cybertek.pojo.Regions;
+import com.cybertek.pojo.Students;
 import com.cybertek.utilities.HRTestBase;
 import io.restassured.RestAssured;
 import io.restassured.http.ContentType;
@@ -92,9 +93,52 @@ public class ORDSPojoGetRequestTest extends HRTestBase {
         assertThat(regionIDs, Matchers.is(expectedRegionIDs) );
 
 
+    }
+
+   /* send a get request to student id 23401 as a path parameter and accept header application/json
+    verify status code=200 /content type=application/json;charset=UTF-8 /Content-Encoding = gzip
+    verify Date header exists
+   assert that
+    firstName Vera
+    batch 14
+    section 12
+    emailAddress aaa@gmail.com
+    companyName Cybertek
+    state IL
+    zipCode 60606
+
+    */
+
+    @Test
+    public void test4() {
+
+        Students students = RestAssured.given().accept(ContentType.JSON)
+                .pathParam("id", 23401).log().all()
+                .when().get("http://api.cybertektraining.com/students/{id}")
+                .then()
+                .statusCode(200)
+                .and().extract().as(Students.class);
+//                .contentType("application/json;charset=UTF-8")
+//                .and()
+//                .header("Content-Encoding", Matchers.is("gzip"))
+//                .and()
+//                .header("Date", Matchers.notNullValue())
+
+
+
+
+
 
 
 
     }
 
 }
+
+
+
+
+
+
+
+
